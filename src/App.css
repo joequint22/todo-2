@@ -1,0 +1,58 @@
+@font-face{
+  src: url(../fonts/static/Quicksand-Light.ttf);
+  font-family: 'Quicksand-light';
+}
+@font-face{
+  src: url(../fonts/static/Quicksand-Medium.ttf);
+  font-family: 'Quicksand-medium';
+}
+@font-face{
+  src: url(../fonts/static/Quicksand-VariableFont_wght.ttf);
+  font-family: 'Quicksand';
+}
+
+html, body, #root{
+  all: unset;
+  height: 100vh;
+  font-family: 'Quicksand-light';
+}
+
+.todos-container{
+  grid-template-columns: repeat(5, 1fr);
+  width: 70%;
+
+}
+
+.card-container{
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; /* flex direction is columns */
+  padding: 25px;
+
+}
+
+.button{
+  min-width: 120px;
+}
+
+
+@media screen and (min-width: 1024px){
+  .todos-container{
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+
+  }
+  .card-container{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: space-between; /* flex direction is columns */
+  }
+  .todo-note{
+    margin: 15px;
+  }
+}
