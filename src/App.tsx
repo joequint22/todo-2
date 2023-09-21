@@ -4,12 +4,15 @@ import Todo from "./components/Todo";
 import "./App.css";
 import "./components/Types";
 
+
+
 export const ACTIONS = {
   //const because it holds as our object of actions
   ADD_TODO: "add-todo",
   TOGGLE_TODO: "toggle-todo",
   DELETE_TODO: "delete-todo",
-};
+}; 
+
 
 type ReducerFn = (todos: ToDoArray, action: ToDoAction) => ToDoArray;
 
@@ -44,6 +47,7 @@ function App() {
   //reducer function needs a type so that you can use it as a useReducer hook generic
   const [todos, dispatch] = useReducer<ReducerFn>(reducer, []);
 
+  // need to give the reducer function a type, the say way as giving the useState variable a type 
   const [userInput, setUserInput] = useState<InputType>({
     one: "",
     two: "",
@@ -53,6 +57,7 @@ function App() {
   //   setTimeout((e: React.ChangeEvent<HTMLInputElement>) => {
   //     setUserInput({ one: e.currentTarget.value, two: "" });
   //   }, 1000);
+  // 
   //   console.log("world")
   // }, [userInput.one]);
 
@@ -132,8 +137,7 @@ function App() {
             dispatch={dispatch} 
           />
         ))}
-        </ul>
-        
+        </ul>       
       </div>
     </>
   );
