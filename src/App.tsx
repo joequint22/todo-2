@@ -1,4 +1,3 @@
-import * as React from "react";
 import { useState, useReducer } from "react";
 import Todo from "./components/Todo";
 import "./App.css";
